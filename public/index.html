@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AcmeCRM Contact Form</title>
+</head>
+<body>
+  <h2>Push Contact to AcmeCRM</h2>
+  <form id="contactForm">
+    <input type="text" name="acme_first_name" placeholder="First Name" required><br><br>
+    <input type="text" name="acme_last_name" placeholder="Last Name" required><br><br>
+    <input type="email" name="acme_email" placeholder="Email" required><br><br>
+    <input type="text" name="acme_company" placeholder="Company" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="response"></p>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      const response = await fetch('/contacts', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Ravikanti',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      document.getElementById('response').textContent = JSON.stringify(result);
+    });
+  </script>
+</body>
+</html>
