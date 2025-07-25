@@ -21,7 +21,7 @@ Database: PostgreSQL
 Testing: Postman
 Frontend (Optional): Basic HTML form
 
-# API Endpoints
+## API Endpoints
 ### POST /contacts
 
 Adds a new contact.
@@ -80,21 +80,21 @@ acme_company	                 company
 
 ## How to Run the Project Locally
 
-# Clone the repository
+### Clone the repository
 git clone https://github.com/rravikanti123/linq_acmecrm.git
 cd linq_acmecrm
 
-# Install dependencies:
+### Install dependencies:
 bundle install
 
-# Create and migrate the database:
+### Create and migrate the database:
 rails db:create
 rails db:migrate
 
-# Start the Rails server:
+### Start the Rails server:
 rails s
 
-# Open Postman and test the endpoints.
+## Open Postman and test the endpoints.
 
 ## Loom Video Walkthrough
 
